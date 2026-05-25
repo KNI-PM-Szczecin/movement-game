@@ -75,7 +75,7 @@ pip install mediapipe==0.10.9 opencv-python
 ```text
 movement-game/
 │
-├── test.py
+├── movement-game.py
 ├── Delfin.png
 ├── README.md
 └── requirements.txt
