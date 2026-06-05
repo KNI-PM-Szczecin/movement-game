@@ -2,6 +2,14 @@ import cv2
 import mediapipe as mp
 import random
 import time
+import sys
+import os
+
+# funkcja wczytywania obrazu w exe
+def resource_path(path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, path)
+    return path
 
 # funkcja sprawdzająca istniejące kamery
 def list_Camera(max_device = 10):
@@ -22,7 +30,7 @@ hands = mp_hands.Hands()
 mp_drawing = mp.solutions.drawing_utils
 
 # wczytanie obrazka delfina
-dolphin = cv2.imread("Delfin.png", cv2.IMREAD_UNCHANGED)
+dolphin = cv2.imread(resource_path("Delfin.png"), cv2.IMREAD_UNCHANGED)
 
 # zmiana rozmiaru
 dolphin = cv2.resize(dolphin, (100, 80))
@@ -70,6 +78,7 @@ while True:
         break
 
     frame = cv2.flip(frame, 1)  
+    
     h, w, _ = frame.shape
 
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
