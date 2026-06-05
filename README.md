@@ -136,5 +136,3 @@ If the target is not hit within several seconds, it respawns automatically.
 
 ---
 
-
----

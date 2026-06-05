@@ -149,6 +149,7 @@ while True:
     if game_over:
         cv2.putText(frame, "KONIEC GRY", (150, 200),
                 cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 4)
+        print(f"Punkty: {score}")
         break
 
     if flash:
